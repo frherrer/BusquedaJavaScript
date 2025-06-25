@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: whitesmoke;
+    color: #333;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+#catalogo {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Caja general para secciones */
+.caja {
+    width: 100%;
+    padding: 20px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+}
+
+/* Formularios en columna por defecto */
+.caja form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+label {
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+input, select, button {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background: #eaeaea;
+    border: 1px solid #aaa;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: darkslategrey;
+    color: white;
+}
+
+/* Grid responsivo para los contenedores de libros */
+.libros-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1fr; /* Móvil: 1 columna */
+}
+
+/* Tablet: 2 columnas */
+@media (min-width: 600px) and (max-width: 1079px) {
+    .libros-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Escritorio: 3 columnas */
+@media (min-width: 1080px) {
+    .libros-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* Contenedor de libro ocupa todo el ancho de su celda */
+.libro {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 0;
+}
+
+/* Por defecto (móvil): input y botón en columna */
+.busqueda-row {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Tablet y escritorio: input y botón en fila */
+@media (min-width: 600px) {
+    .busqueda-row {
+        flex-direction: row;
+        align-items: flex-end;
+        gap: 12px;
+    }
+    .busqueda-row input[type="text"] {
+        flex: 1 1 auto;
+    }
+    .busqueda-row button {
+        flex: 0 0 auto;
+        height: 100%;
+    }
+}
+
